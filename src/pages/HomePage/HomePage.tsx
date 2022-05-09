@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import { Typography } from '@mui/material';
 
-import ROUTEPATH from 'constants/routesConstant';
+import ROUTEPATH from 'constants/routes';
 
 import './HomePage.css';
 
@@ -17,10 +17,6 @@ const HomePage: FC = () => {
 
   const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setWord(e.currentTarget.value);
-  };
-
-  const onSearchClick = () => {
-    navigate(ROUTEPATH.RESULT + word);
   };
 
   return (
@@ -50,7 +46,7 @@ const HomePage: FC = () => {
             onChange={onSearchChange}
             InputProps={{
               endAdornment: (
-                <IconButton onClick={onSearchClick} disabled={!word}>
+                <IconButton onClick={() => navigate(ROUTEPATH.RESULT + word)} disabled={!word}>
                   <SearchIcon />
                 </IconButton>
               ),
