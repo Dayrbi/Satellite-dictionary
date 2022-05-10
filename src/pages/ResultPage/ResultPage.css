@@ -1,0 +1,12 @@
+.resultRage {
+    box-sizing: border-box;
+    width: 90vw;
+    height: 80vh;
+    padding: 50px auto;
+}
+  
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%
+}

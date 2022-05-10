@@ -7,30 +7,25 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import { Typography } from '@mui/material';
 
-import ROUTEPATH from 'constants/routesConstant';
+import ROUTEPATH from 'constants/routes';
 
 import './HomePage.css';
 
-const HomePage: FC = () => {
+export const HomePage: FC = () => {
   const navigate = useNavigate();
   const [word, setWord] = useState('');
 
   const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setWord(e.currentTarget.value);
-  };
-
-  const onSearchClick = () => {
-    navigate(ROUTEPATH.RESULT + word);
+    setWord(e.currentTarget.value.trim());
   };
 
   return (
     <div className="HomePage">
-      <Box sx={{ marginTop: '20px' }}>
+      <Box sx={{ mt: '20px' }}>
         <Box>
           <Typography
             gutterBottom
             variant="h5"
-            component="div"
             sx={{
               display: 'flex',
               width: '100%',
@@ -50,7 +45,7 @@ const HomePage: FC = () => {
             onChange={onSearchChange}
             InputProps={{
               endAdornment: (
-                <IconButton onClick={onSearchClick} disabled={!word}>
+                <IconButton onClick={() => navigate(ROUTEPATH.RESULT + word)} disabled={!word}>
                   <SearchIcon />
                 </IconButton>
               ),
@@ -61,5 +56,3 @@ const HomePage: FC = () => {
     </div>
   );
 };
-
-export default HomePage;
