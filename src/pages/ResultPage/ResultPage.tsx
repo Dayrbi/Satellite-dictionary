@@ -15,7 +15,7 @@ import ROUTEPATH from 'constants/routes';
 
 import './ResultPage.css';
 
-const ResultPage: FC = () => {
+export const ResultPage: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -159,5 +159,3 @@ const ResultPage: FC = () => {
     </div>
   );
 };
-
-export default ResultPage;
