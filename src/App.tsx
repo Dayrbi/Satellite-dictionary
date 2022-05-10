@@ -4,9 +4,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import ROUTEPATH from 'constants/routes';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { ResultPage } from 'pages/ResultPage/ResultPage';
+import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 
 import './App.css';
-import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 
 export function App() {
   return (
